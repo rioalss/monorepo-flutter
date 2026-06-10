@@ -1,0 +1,115 @@
+name: app
+description: "App monorepo for my apps"
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+workspace:
+  # Apps
+  - apps/example_app
+  # Packages
+  - packages/core_ui
+  - packages/design_system
+  - packages/core_state
+  - packages/core_utils
+  - packages/core_network
+  - packages/core_storage
+  - packages/core_domain
+  - packages/core_l10n
+
+dev_dependencies:
+  melos: ^7.8.1
+  very_good_analysis: ^10.2.0
+
+melos:
+  command:
+    version:
+      updateGitTagRefs: true
+      workspaceChangelog: true
+    bootstrap:
+      runPubGetInParallel: true
+      usePubspecOverrides: true
+
+  scripts:
+    # ==================== Run Apps ====================
+    run:osm_map:
+      run: cd apps/osm_map && flutter run
+      description: Run the OSM Map app
+
+    run:osm_map:ios:
+      run: cd apps/osm_map && flutter run -d iPhone
+      description: Run the OSM Map app on iOS simulator
+
+    run:osm_map:android:
+      run: cd apps/osm_map && flutter run -d android
+      description: Run the OSM Map app on Android
+
+    # emulators
+    emulators:ios:
+      run: cd apps/osm_map && flutter run -d iPhone
+      description: Launch the iOS emulator
+
+    emulators:android:
+      run: cd apps/osm_map && flutter run -d emulator-5554
+      description: Launch the Android emulator
+
+    # ==================== Dependencies ====================
+    get:
+      run: melos exec -- flutter pub get
+      description: Get dependencies in all packages
+
+    upgrade:
+      run: melos exec -- flutter pub upgrade
+      description: Upgrade dependencies in all packages
+
+    # ==================== Analysis ====================
+    analyze:
+      run: melos exec -- dart analyze --fatal-infos
+      description: Run dart analyze in all packages
+
+    format:
+      run: melos exec -- dart format --set-exit-if-changed .
+      description: Run dart format in all packages
+
+    test:
+      run: melos exec -- flutter test
+      description: Run tests in all packages
+      packageFilters:
+        dirExists: test
+
+    test:coverage:
+      run: melos exec -- flutter test --coverage
+      description: Run tests with coverage in all packages
+      packageFilters:
+        dirExists: test
+
+    build:runner:
+      run: melos exec -- dart run build_runner build --delete-conflicting-outputs
+      description: Run build_runner in all packages
+      packageFilters:
+        dependsOn: build_runner
+
+    clean:
+      run: melos exec -- flutter clean
+      description: Clean all packages
+
+    # ==================== Code generation ====================
+    gen:l10n:
+      run: melos exec -- flutter gen-l10n
+      description: Generate localizations
+      packageFilters:
+        fileExists: l10n.yaml
+
+    gen:icons:
+      run: melos exec -- flutter pub run flutter_launcher_icons
+      description: Generate app icons
+      packageFilters:
+        dependsOn: flutter_launcher_icons
+
+    gen:splash:
+      run: melos exec -- flutter pub run flutter_native_splash:create
+      description: Generate splash screens
+      packageFilters:
+        dependsOn: flutter_native_splash

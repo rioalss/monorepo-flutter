@@ -1,0 +1,425 @@
+{
+  "@@locale": "en",
+
+  "commonOk": "OK",
+  "@commonOk": {
+    "description": "Generic confirmation button label."
+  },
+  "commonCancel": "Cancel",
+  "@commonCancel": {
+    "description": "Generic cancel button label."
+  },
+  "commonRetry": "Retry",
+  "@commonRetry": {
+    "description": "Button label to retry a failed action."
+  },
+  "commonClose": "Close",
+  "@commonClose": {
+    "description": "Button label to close a dialog or sheet."
+  },
+  "commonSave": "Save",
+  "@commonSave": {
+    "description": "Button label to save changes."
+  },
+  "commonDelete": "Delete",
+  "@commonDelete": {
+    "description": "Button label to delete an item."
+  },
+  "commonError": "Something went wrong",
+  "@commonError": {
+    "description": "Generic error message."
+  },
+  "commonLoading": "Loading...",
+  "@commonLoading": {
+    "description": "Loading indicator label."
+  },
+  "commonSuccess": "Success",
+  "@commonSuccess": {
+    "description": "Generic success message."
+  },
+  "commonNoData": "No data available",
+  "@commonNoData": {
+    "description": "Empty state message when no data is found."
+  },
+  "commonTryAgain": "Try again",
+  "@commonTryAgain": {
+    "description": "Prompt to retry after a failure."
+  },
+
+  "validationRequired": "This field is required",
+  "@validationRequired": {
+    "description": "Validation error when a required field is empty."
+  },
+  "validationMinLength": "Must be at least {min} characters",
+  "@validationMinLength": {
+    "description": "Validation error when input is shorter than the minimum length.",
+    "placeholders": {
+      "min": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+  "validationMaxLength": "Must be at most {max} characters",
+  "@validationMaxLength": {
+    "description": "Validation error when input exceeds the maximum length.",
+    "placeholders": {
+      "max": {
+        "type": "int",
+        "example": "100"
+      }
+    }
+  },
+  "validationLengthRange": "Must be between {min} and {max} characters",
+  "@validationLengthRange": {
+    "description": "Validation error when input length is outside the allowed range.",
+    "placeholders": {
+      "min": {
+        "type": "int",
+        "example": "3"
+      },
+      "max": {
+        "type": "int",
+        "example": "30"
+      }
+    }
+  },
+  "validationPattern": "Invalid format",
+  "@validationPattern": {
+    "description": "Validation error when input does not match the expected pattern."
+  },
+  "validationEmail": "Enter a valid email address",
+  "@validationEmail": {
+    "description": "Validation error for invalid email addresses."
+  },
+  "validationUrl": "Enter a valid URL",
+  "@validationUrl": {
+    "description": "Validation error for invalid URLs."
+  },
+  "validationAlpha": "Only letters are allowed",
+  "@validationAlpha": {
+    "description": "Validation error when input contains non-letter characters."
+  },
+  "validationAlphanumeric": "Only letters and numbers are allowed",
+  "@validationAlphanumeric": {
+    "description": "Validation error when input contains special characters."
+  },
+  "validationNumeric": "Only numbers are allowed",
+  "@validationNumeric": {
+    "description": "Validation error when input contains non-numeric characters."
+  },
+  "validationNoWhitespace": "Spaces are not allowed",
+  "@validationNoWhitespace": {
+    "description": "Validation error when input contains whitespace."
+  },
+  "validationNoLeadingTrailingWhitespace": "Leading or trailing spaces are not allowed",
+  "@validationNoLeadingTrailingWhitespace": {
+    "description": "Validation error when input has leading or trailing whitespace."
+  },
+  "validationFullName": "Enter a valid name",
+  "@validationFullName": {
+    "description": "Validation error for invalid full names."
+  },
+  "validationUsername": "Enter a valid username (3–30 characters)",
+  "@validationUsername": {
+    "description": "Validation error for invalid usernames."
+  },
+  "validationPassword": "Password does not meet requirements",
+  "@validationPassword": {
+    "description": "Validation error when password does not meet policy."
+  },
+  "validationConfirmPassword": "Passwords do not match",
+  "@validationConfirmPassword": {
+    "description": "Validation error when password confirmation does not match."
+  },
+  "validationMatch": "Values do not match",
+  "@validationMatch": {
+    "description": "Validation error when two values do not match."
+  },
+  "validationInteger": "Enter a valid whole number",
+  "@validationInteger": {
+    "description": "Validation error for non-integer numeric input."
+  },
+  "validationDecimal": "Enter a valid number",
+  "@validationDecimal": {
+    "description": "Validation error for invalid decimal numbers."
+  },
+  "validationMinValue": "Must be at least {min}",
+  "@validationMinValue": {
+    "description": "Validation error when numeric value is below the minimum.",
+    "placeholders": {
+      "min": {
+        "type": "num",
+        "example": "0"
+      }
+    }
+  },
+  "validationMaxValue": "Must be at most {max}",
+  "@validationMaxValue": {
+    "description": "Validation error when numeric value exceeds the maximum.",
+    "placeholders": {
+      "max": {
+        "type": "num",
+        "example": "100"
+      }
+    }
+  },
+  "validationRange": "Must be between {min} and {max}",
+  "@validationRange": {
+    "description": "Validation error when numeric value is outside the allowed range.",
+    "placeholders": {
+      "min": {
+        "type": "num",
+        "example": "0"
+      },
+      "max": {
+        "type": "num",
+        "example": "100"
+      }
+    }
+  },
+  "validationPositive": "Must be a positive number",
+  "@validationPositive": {
+    "description": "Validation error when number is not positive."
+  },
+  "validationNonNegative": "Must be zero or greater",
+  "@validationNonNegative": {
+    "description": "Validation error when number is negative."
+  },
+  "validationPhoneId": "Enter a valid Indonesian mobile number",
+  "@validationPhoneId": {
+    "description": "Validation error for invalid Indonesian phone numbers."
+  },
+  "validationNik": "NIK must be exactly 16 digits",
+  "@validationNik": {
+    "description": "Validation error for invalid Indonesian NIK."
+  },
+  "validationOtp": "Enter a {length}-digit code",
+  "@validationOtp": {
+    "description": "Validation error for invalid OTP codes.",
+    "placeholders": {
+      "length": {
+        "type": "int",
+        "example": "6"
+      }
+    }
+  },
+  "validationLatitude": "Latitude must be between -90 and 90",
+  "@validationLatitude": {
+    "description": "Validation error for invalid latitude values."
+  },
+  "validationLongitude": "Longitude must be between -180 and 180",
+  "@validationLongitude": {
+    "description": "Validation error for invalid longitude values."
+  },
+  "validationCoordinatePair": "Enter valid coordinates (latitude,longitude)",
+  "@validationCoordinatePair": {
+    "description": "Validation error for invalid coordinate pairs."
+  },
+  "validationPostalCode": "Enter a valid postal code",
+  "@validationPostalCode": {
+    "description": "Validation error for invalid postal codes."
+  },
+  "validationCreditCard": "Enter a valid card number",
+  "@validationCreditCard": {
+    "description": "Validation error for invalid credit card numbers."
+  },
+  "validationDate": "Enter a valid date",
+  "@validationDate": {
+    "description": "Validation error for invalid dates."
+  },
+  "validationMinAge": "You must be at least {years} years old",
+  "@validationMinAge": {
+    "description": "Validation error when age is below the minimum.",
+    "placeholders": {
+      "years": {
+        "type": "int",
+        "example": "18"
+      }
+    }
+  },
+  "validationFileExtension": "File type is not allowed",
+  "@validationFileExtension": {
+    "description": "Validation error for disallowed file extensions."
+  },
+  "validationNotEqual": "This value is not allowed",
+  "@validationNotEqual": {
+    "description": "Validation error when value matches a forbidden value."
+  },
+  "validationBlacklist": "This value is not allowed",
+  "@validationBlacklist": {
+    "description": "Validation error when value is in a blacklist."
+  },
+  "validationWhitelist": "This value is not allowed",
+  "@validationWhitelist": {
+    "description": "Validation error when value is not in a whitelist."
+  },
+
+  "commonThemeTooltip": "Theme: {mode}",
+  "@commonThemeTooltip": {
+    "description": "Tooltip for the theme cycle button.",
+    "placeholders": {
+      "mode": {
+        "type": "String",
+        "example": "dark"
+      }
+    }
+  },
+  "commonLocaleTooltip": "Language: {language}",
+  "@commonLocaleTooltip": {
+    "description": "Tooltip for the locale cycle button.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+
+  "authLoginTitle": "Login",
+  "@authLoginTitle": {
+    "description": "Login screen title."
+  },
+  "authLoginButton": "Login",
+  "@authLoginButton": {
+    "description": "Login submit button label."
+  },
+  "authCreateAccount": "Create account",
+  "@authCreateAccount": {
+    "description": "Link to the registration screen."
+  },
+  "authRegisterTitle": "Register",
+  "@authRegisterTitle": {
+    "description": "Registration screen title."
+  },
+  "authRegisterButton": "Register",
+  "@authRegisterButton": {
+    "description": "Registration submit button label."
+  },
+  "authUsername": "Username",
+  "@authUsername": {
+    "description": "Username field label."
+  },
+  "authPassword": "Password",
+  "@authPassword": {
+    "description": "Password field label."
+  },
+  "authFirstName": "First name",
+  "@authFirstName": {
+    "description": "First name field label."
+  },
+  "authLastName": "Last name",
+  "@authLastName": {
+    "description": "Last name field label."
+  },
+  "authAge": "Age",
+  "@authAge": {
+    "description": "Age field label."
+  },
+  "authInvalidNumber": "Invalid number",
+  "@authInvalidNumber": {
+    "description": "Validation error for non-numeric age input."
+  },
+  "authUserCreated": "User created: {name}",
+  "@authUserCreated": {
+    "description": "Snack bar after successful registration.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Jane Doe"
+      }
+    }
+  },
+
+  "dashboardTitle": "Dashboard",
+  "@dashboardTitle": {
+    "description": "Dashboard screen title."
+  },
+  "dashboardLogout": "Logout",
+  "@dashboardLogout": {
+    "description": "Logout button tooltip."
+  },
+  "dashboardLoadingProfile": "Loading profile...",
+  "@dashboardLoadingProfile": {
+    "description": "Loading state while fetching user profile."
+  },
+  "dashboardWelcome": "Welcome, {name}",
+  "@dashboardWelcome": {
+    "description": "Greeting with the user's display name.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Jane"
+      }
+    }
+  },
+  "dashboardViewAllUsers": "View all users",
+  "@dashboardViewAllUsers": {
+    "description": "Button to open the users list."
+  },
+  "dashboardDatePicker": "Date Picker",
+  "@dashboardDatePicker": {
+    "description": "Button to open single date picker."
+  },
+  "dashboardDateRangePicker": "Date Range Picker",
+  "@dashboardDateRangePicker": {
+    "description": "Button to open date range picker."
+  },
+  "dashboardPickDate": "Pick a date",
+  "@dashboardPickDate": {
+    "description": "Date picker dialog title."
+  },
+  "dashboardSelectedDate": "Selected: {date}",
+  "@dashboardSelectedDate": {
+    "description": "Snack bar after selecting a single date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "2026-06-09"
+      }
+    }
+  },
+  "dashboardSelectedDateRange": "Selected: {start} - {end}",
+  "@dashboardSelectedDateRange": {
+    "description": "Snack bar after selecting a date range.",
+    "placeholders": {
+      "start": {
+        "type": "String",
+        "example": "2026-06-01"
+      },
+      "end": {
+        "type": "String",
+        "example": "2026-06-09"
+      }
+    }
+  },
+  "dashboardUserId": "ID: {id}",
+  "@dashboardUserId": {
+    "description": "User ID label on dashboard.",
+    "placeholders": {
+      "id": {
+        "type": "String",
+        "example": "1"
+      }
+    }
+  },
+  "dashboardUserEmail": "Email: {email}",
+  "@dashboardUserEmail": {
+    "description": "User email label on dashboard.",
+    "placeholders": {
+      "email": {
+        "type": "String",
+        "example": "jane@example.com"
+      }
+    }
+  },
+
+  "usersTitle": "Users",
+  "@usersTitle": {
+    "description": "Users list screen title."
+  },
+  "usersEmpty": "No users found",
+  "@usersEmpty": {
+    "description": "Empty state when the users list is empty."
+  }
+}

@@ -1,0 +1,73 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "template_flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "example_app",
+            "cwd": "${workspaceFolder}/apps/example_app",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "presentation": {
+                "group": "example_app",
+                "order": 1
+            }
+        },
+        {
+            "name": "example_app (Windows)",
+            "cwd": "${workspaceFolder}/apps/example_app",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "windows",
+            "presentation": {
+                "group": "example_app",
+                "order": 2
+            }
+        },
+        {
+            "name": "example_app (Chrome)",
+            "cwd": "${workspaceFolder}/apps/example_app",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "deviceId": "chrome",
+            "presentation": {
+                "group": "example_app",
+                "order": 3
+            }
+        },
+        {
+            "name": "example_app (profile)",
+            "cwd": "${workspaceFolder}/apps/example_app",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile",
+            "presentation": {
+                "group": "example_app",
+                "order": 4
+            }
+        },
+        {
+            "name": "example_app (release)",
+            "cwd": "${workspaceFolder}/apps/example_app",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release",
+            "presentation": {
+                "group": "example_app",
+                "order": 5
+            }
+        },
+    ]
+}

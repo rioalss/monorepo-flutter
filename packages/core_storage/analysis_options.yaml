@@ -1,0 +1,268 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+  - "**/*.g.dart"
+  - "**/*.freezed.dart"
+  - "**/*.gr.dart"
+  - "**/generated/**"
+  - "**/*.gen.dart"
+  errors:
+    inference_failure_on_function_invocation: ignore
+    invalid_annotation_target: ignore
+    public_member_api_docs: ignore
+  plugins:
+  - custom_lint
+
+linter:
+  rules:
+    # --- Additional strict rules (short usage notes) ---
+
+    # int getCount() { ... }  not  getCount() { ... }
+    always_declare_return_types: true
+
+    # Foo({required this.id, this.name})  required first
+    always_put_required_named_parameters_first: true
+
+    # x ? a : b  not  true ? a : b
+    avoid_bool_literals_in_conditional_expressions: true
+
+    # on Exception catch (e) { }  not  catch (e) { }
+    avoid_catches_without_on_clauses: true
+
+    # use num / identical; avoid (x is int || x is double)
+    avoid_double_and_int_checks: true
+
+    # const C({this.x});  not  const C() : x = 0;
+    avoid_field_initializers_in_const_classes: true
+
+    # implements DateTime  bad for value types
+    avoid_implementing_value_types: true
+
+    # avoid 2^53+ ints on web
+    avoid_js_rounded_ints: true
+
+    # void setFlag({required bool value})  not  setFlag(bool)
+    avoid_positional_boolean_parameters: true
+
+    # typedef _Fn = void Function();  use top-level/private class
+    avoid_private_typedef_functions: true
+
+    # return other;  not  return this; for chaining
+    avoid_returning_this: true
+
+    # every setter needs a getter
+    avoid_setters_without_getters: true
+
+    # prefer dart:io sync where possible over slow async IO
+    avoid_slow_async_io: true
+
+    # avoid obj.runtimeType.toString()
+    avoid_type_to_string: true
+
+    # list.map((e) => ...)  not  list.map((int e) => ...)
+    avoid_types_on_closure_parameters: true
+
+    # remove unused ctor params
+    avoid_unused_constructor_parameters: true
+
+    # Future<void> fn() async  not  void fn() async
+    avoid_void_async: true
+
+    # cancel StreamSubscription in dispose
+    cancel_subscriptions: true
+
+    # obj..a()..b();  chain on same receiver
+    cascade_invocations: true
+
+    # controller.close() when done
+    close_sinks: true
+
+    # export ... hide ... show ...  fixed order
+    combinators_ordering: true
+
+    # import only existing conditional URIs
+    conditional_uri_does_not_exist: true
+
+    # @Deprecated('msg') on class + members consistently
+    deprecated_consistency: true
+
+    # dart: → package: → relative imports, sorted
+    directives_ordering: true
+
+    # no const x = String.fromEnvironment(...)
+    do_not_use_environment: true
+
+    # file must end with newline
+    eol_at_end_of_file: true
+
+    # // TODO(user): fix  not  // TODO: fix
+    flutter_style_todos: true
+
+    # final x = f(); return x;  →  return f();
+    join_return_with_assignment: true
+
+    # '''\nline'''  newline after opening '''
+    leading_newlines_in_multiline_strings: true
+
+    # if (flag) ...  not  if (true) ...
+    literal_only_boolean_expressions: true
+
+    # Child({super.key})  name matches super
+    matching_super_parameters: true
+
+    # 'a' 'b'  →  'a' ' b' or 'a$b'
+    missing_whitespace_between_adjacent_strings: true
+
+    # ['a' 'b']  use + or separate elements
+    no_adjacent_strings_in_list: true
+
+    # import math as math;  not  _math
+    no_leading_underscores_for_library_prefixes: true
+
+    # final item = ...;  not  final _item (locals)
+    no_leading_underscores_for_local_identifiers: true
+
+    # avoid runtimeType.toString()
+    no_runtimeType_toString: true
+
+    # 1 + 0  →  1; drop useless + - *
+    noop_primitive_operations: true
+
+    # final items = <String>[];  omit type when obvious
+    omit_local_variable_types: true
+
+    # allow single-method abstract classes
+    one_member_abstracts: false
+
+    # throw StateError(...);  not  throw 'msg';
+    only_throw_errors: true
+
+    # lines may exceed 80 chars
+    lines_longer_than_80_chars: false
+
+    # @required this.x then assign in body — document intent
+    parameter_assignments: true
+
+    # : assert(x > 0) in initializer list
+    prefer_asserts_in_initializer_lists: true
+
+    # assert(x > 0, 'x must be positive');
+    prefer_asserts_with_message: true
+
+    # MyClass._()  not  static MyClass create()
+    prefer_constructors_over_static_methods: true
+
+    # int double(int x) => x * 2;
+    prefer_expression_function_bodies: true
+
+    # for (final x in list) { }
+    prefer_final_in_for_each: true
+
+    # final count = 0;
+    prefer_final_locals: true
+
+    # items.forEach((e) => ...);  when no break/continue needed
+    prefer_foreach: true
+
+    # [if (ok) item]  not  ok ? [item] : []
+    prefer_if_elements_to_conditional_expressions: true
+
+    # const EdgeInsets.all(8)  not  8.0 when int fits
+    prefer_int_literals: true
+
+    # mixin M on Base  not  implements for mixin-like reuse
+    prefer_mixin: true
+
+    # obj?.call();  not  if (obj != null) obj.call();
+    prefer_null_aware_method_calls: true
+
+    # 'text'  not  "text"
+    prefer_single_quotes: true
+
+    # trailing comma on multi-line args/lists
+    require_trailing_commas: true
+
+    # SizedBox.shrink() / expand()  not  Container()
+    sized_box_shrink_expand: true
+
+    # factory/ctors before fields/methods
+    sort_constructors_first: true
+
+    # dependencies: alphabetically in pubspec
+    sort_pub_dependencies: true
+
+    # unnamed ctor before named ctors
+    sort_unnamed_constructors_first: true
+
+    # class C extends B { C(super.id); }
+    tighten_type_of_initializing_formals: true
+
+    # public API needs types; void fetch();
+    type_annotate_public_apis: true
+
+    # unawaited(save());  for fire-and-forget Future
+    unawaited_futures: true
+
+    # return fetch();  not  return await fetch();
+    unnecessary_await_in_return: true
+
+    # onPressed: _handleTap  not  () => _handleTap()
+    unnecessary_lambdas: true
+
+    # x ??= v when x can be null only
+    unnecessary_null_aware_assignments: true
+
+    # if (x != null) use(x!)  simplify flow
+    unnecessary_null_checks: true
+
+    # return a + b;  not  return (a + b);
+    unnecessary_parenthesis: true
+
+    # 'path'  not  r'path' when no escapes
+    unnecessary_raw_strings: true
+
+    # no standalone expr; e.g. foo; as statement
+    unnecessary_statements: true
+
+    # dead code after return in main
+    unreachable_from_main: true
+
+    # ColoredBox(color: c, child: ch)  not  Container(color:)
+    use_colored_box: true
+
+    # DecoratedBox(decoration: d, child: ch)
+    use_decorated_box: true
+
+    # enum Status { active, idle }  not  string constants
+    use_enums: true
+
+    # enabled ?? false  not  enabled == true
+    use_if_null_to_convert_nulls_to_bools: true
+
+    # n.isEven  not  n % 2 == 0
+    use_is_even_rather_than_modulo: true
+
+    # late final _cache;  init once, lazy
+    use_late_for_private_fields_and_variables: true
+
+    # static const kDefault = ...;
+    use_named_constants: true
+
+    # r'\d+' when many backslashes
+    use_raw_strings: true
+
+    # void set name(String v) { _name = v; }
+    use_setters_to_change_properties: true
+
+    # buffer.write() in loops  not  str += ...
+    use_string_buffers: true
+
+    # MyWidget({super.key});
+    use_super_parameters: true
+
+    # expect(() => fn(), throwsA(...));
+    use_test_throws_matchers: true
+
+    # extension on X, method toOther() / asOther()
+    use_to_and_as_if_applicable: true
