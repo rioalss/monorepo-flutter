@@ -16,10 +16,10 @@ _ApiErrorModel _$ApiErrorModelFromJson(Map<String, dynamic> json) =>
       ),
     );
 
-Map<String, dynamic> _$ApiErrorModelToJson(_ApiErrorModel instance) =>
-    <String, dynamic>{
-      'statusCode':
-          const SafeNullableIntConverter().toJson(instance.statusCode),
-      'message': const SafeNullableStringConverter().toJson(instance.message),
-      'errors': instance.errors,
-    };
+Map<String, dynamic> _$ApiErrorModelToJson(
+  _ApiErrorModel instance,
+) => <String, dynamic>{
+  'statusCode': const SafeNullableIntConverter().toJson(instance.statusCode),
+  'message': const SafeNullableStringConverter().toJson(instance.message),
+  'errors': instance.errors,
+};

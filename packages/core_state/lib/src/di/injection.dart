@@ -5,7 +5,11 @@
 
 library;
 
+import 'package:core_domain/core_domain.dart';
+import 'package:core_network/core_network.dart';
+import 'package:core_state/core_state.dart';
 import 'package:core_state/src/di/injection.config.dart';
+import 'package:core_storage/core_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
@@ -16,5 +20,12 @@ final GetIt getIt = GetIt.instance;
 ///
 /// Must be called after app-provided dependencies (Dio, storage, etc.) are
 /// registered on [getIt].
-@InjectableInit()
+@InjectableInit(
+  ignoreUnregisteredTypes: [
+    DioClient,
+    TokenStorage,
+    ILocalStorage,
+    SessionInvalidationHub,
+  ],
+)
 Future<void> configureDependencies() async => getIt.init();

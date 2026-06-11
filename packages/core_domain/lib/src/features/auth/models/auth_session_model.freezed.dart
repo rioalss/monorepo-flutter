@@ -14,62 +14,47 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AuthSessionModel {
-  @JsonKey(name: 'accessToken')
-  @SafeStringConverter()
-  String get accessToken;
-  @JsonKey(name: 'refreshToken')
-  @SafeStringConverter()
-  String get refreshToken;
-  @JsonKey(name: 'id')
-  @SafeStringConverter()
-  String get userId;
 
-  /// Create a copy of AuthSessionModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AuthSessionModelCopyWith<AuthSessionModel> get copyWith =>
-      _$AuthSessionModelCopyWithImpl<AuthSessionModel>(
-          this as AuthSessionModel, _$identity);
+@JsonKey(name: 'accessToken')@SafeStringConverter() String get accessToken;@JsonKey(name: 'refreshToken')@SafeStringConverter() String get refreshToken;@JsonKey(name: 'id')@SafeStringConverter() String get userId;
+/// Create a copy of AuthSessionModel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AuthSessionModelCopyWith<AuthSessionModel> get copyWith => _$AuthSessionModelCopyWithImpl<AuthSessionModel>(this as AuthSessionModel, _$identity);
 
   /// Serializes this AuthSessionModel to a JSON map.
   Map<String, dynamic> toJson();
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AuthSessionModel &&
-            (identical(other.accessToken, accessToken) ||
-                other.accessToken == accessToken) &&
-            (identical(other.refreshToken, refreshToken) ||
-                other.refreshToken == refreshToken) &&
-            (identical(other.userId, userId) || other.userId == userId));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, accessToken, refreshToken, userId);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AuthSessionModel&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken)&&(identical(other.userId, userId) || other.userId == userId));
+}
 
-  @override
-  String toString() {
-    return 'AuthSessionModel(accessToken: $accessToken, refreshToken: $refreshToken, userId: $userId)';
-  }
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,accessToken,refreshToken,userId);
+
+@override
+String toString() {
+  return 'AuthSessionModel(accessToken: $accessToken, refreshToken: $refreshToken, userId: $userId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $AuthSessionModelCopyWith<$Res> {
-  factory $AuthSessionModelCopyWith(
-          AuthSessionModel value, $Res Function(AuthSessionModel) _then) =
-      _$AuthSessionModelCopyWithImpl;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'accessToken') @SafeStringConverter() String accessToken,
-      @JsonKey(name: 'refreshToken') @SafeStringConverter() String refreshToken,
-      @JsonKey(name: 'id') @SafeStringConverter() String userId});
-}
+abstract mixin class $AuthSessionModelCopyWith<$Res>  {
+  factory $AuthSessionModelCopyWith(AuthSessionModel value, $Res Function(AuthSessionModel) _then) = _$AuthSessionModelCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'accessToken')@SafeStringConverter() String accessToken,@JsonKey(name: 'refreshToken')@SafeStringConverter() String refreshToken,@JsonKey(name: 'id')@SafeStringConverter() String userId
+});
 
+
+
+
+}
 /// @nodoc
 class _$AuthSessionModelCopyWithImpl<$Res>
     implements $AuthSessionModelCopyWith<$Res> {
@@ -78,292 +63,201 @@ class _$AuthSessionModelCopyWithImpl<$Res>
   final AuthSessionModel _self;
   final $Res Function(AuthSessionModel) _then;
 
-  /// Create a copy of AuthSessionModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? accessToken = null,
-    Object? refreshToken = null,
-    Object? userId = null,
-  }) {
-    return _then(_self.copyWith(
-      accessToken: null == accessToken
-          ? _self.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshToken: null == refreshToken
-          ? _self.refreshToken
-          : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AuthSessionModel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? accessToken = null,Object? refreshToken = null,Object? userId = null,}) {
+  return _then(_self.copyWith(
+accessToken: null == accessToken ? _self.accessToken : accessToken // ignore: cast_nullable_to_non_nullable
+as String,refreshToken: null == refreshToken ? _self.refreshToken : refreshToken // ignore: cast_nullable_to_non_nullable
+as String,userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
+
+}
+
 
 /// Adds pattern-matching-related methods to [AuthSessionModel].
 extension AuthSessionModelPatterns on AuthSessionModel {
-  /// A variant of `map` that fallback to returning `orElse`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_AuthSessionModel value)? $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _AuthSessionModel() when $default != null:
-        return $default(_that);
-      case _:
-        return orElse();
-    }
-  }
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AuthSessionModel value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _AuthSessionModel() when $default != null:
+return $default(_that);case _:
+  return orElse();
 
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// Callbacks receives the raw object, upcasted.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case final Subclass2 value:
-  ///     return ...;
-  /// }
-  /// ```
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
 
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_AuthSessionModel value) $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _AuthSessionModel():
-        return $default(_that);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AuthSessionModel value)  $default,){
+final _that = this;
+switch (_that) {
+case _AuthSessionModel():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
 
-  /// A variant of `map` that fallback to returning `null`.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case final Subclass value:
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
 
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_AuthSessionModel value)? $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _AuthSessionModel() when $default != null:
-        return $default(_that);
-      case _:
-        return null;
-    }
-  }
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AuthSessionModel value)?  $default,){
+final _that = this;
+switch (_that) {
+case _AuthSessionModel() when $default != null:
+return $default(_that);case _:
+  return null;
 
-  /// A variant of `when` that fallback to an `orElse` callback.
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return orElse();
-  /// }
-  /// ```
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
 
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            @JsonKey(name: 'accessToken')
-            @SafeStringConverter()
-            String accessToken,
-            @JsonKey(name: 'refreshToken')
-            @SafeStringConverter()
-            String refreshToken,
-            @JsonKey(name: 'id') @SafeStringConverter() String userId)?
-        $default, {
-    required TResult orElse(),
-  }) {
-    final _that = this;
-    switch (_that) {
-      case _AuthSessionModel() when $default != null:
-        return $default(_that.accessToken, _that.refreshToken, _that.userId);
-      case _:
-        return orElse();
-    }
-  }
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'accessToken')@SafeStringConverter()  String accessToken, @JsonKey(name: 'refreshToken')@SafeStringConverter()  String refreshToken, @JsonKey(name: 'id')@SafeStringConverter()  String userId)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _AuthSessionModel() when $default != null:
+return $default(_that.accessToken,_that.refreshToken,_that.userId);case _:
+  return orElse();
 
-  /// A `switch`-like method, using callbacks.
-  ///
-  /// As opposed to `map`, this offers destructuring.
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case Subclass2(:final field2):
-  ///     return ...;
-  /// }
-  /// ```
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
 
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            @JsonKey(name: 'accessToken')
-            @SafeStringConverter()
-            String accessToken,
-            @JsonKey(name: 'refreshToken')
-            @SafeStringConverter()
-            String refreshToken,
-            @JsonKey(name: 'id') @SafeStringConverter() String userId)
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _AuthSessionModel():
-        return $default(_that.accessToken, _that.refreshToken, _that.userId);
-      case _:
-        throw StateError('Unexpected subclass');
-    }
-  }
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'accessToken')@SafeStringConverter()  String accessToken, @JsonKey(name: 'refreshToken')@SafeStringConverter()  String refreshToken, @JsonKey(name: 'id')@SafeStringConverter()  String userId)  $default,) {final _that = this;
+switch (_that) {
+case _AuthSessionModel():
+return $default(_that.accessToken,_that.refreshToken,_that.userId);case _:
+  throw StateError('Unexpected subclass');
 
-  /// A variant of `when` that fallback to returning `null`
-  ///
-  /// It is equivalent to doing:
-  /// ```dart
-  /// switch (sealedClass) {
-  ///   case Subclass(:final field):
-  ///     return ...;
-  ///   case _:
-  ///     return null;
-  /// }
-  /// ```
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
 
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            @JsonKey(name: 'accessToken')
-            @SafeStringConverter()
-            String accessToken,
-            @JsonKey(name: 'refreshToken')
-            @SafeStringConverter()
-            String refreshToken,
-            @JsonKey(name: 'id') @SafeStringConverter() String userId)?
-        $default,
-  ) {
-    final _that = this;
-    switch (_that) {
-      case _AuthSessionModel() when $default != null:
-        return $default(_that.accessToken, _that.refreshToken, _that.userId);
-      case _:
-        return null;
-    }
-  }
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'accessToken')@SafeStringConverter()  String accessToken, @JsonKey(name: 'refreshToken')@SafeStringConverter()  String refreshToken, @JsonKey(name: 'id')@SafeStringConverter()  String userId)?  $default,) {final _that = this;
+switch (_that) {
+case _AuthSessionModel() when $default != null:
+return $default(_that.accessToken,_that.refreshToken,_that.userId);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
+
 class _AuthSessionModel implements AuthSessionModel {
-  const _AuthSessionModel(
-      {@JsonKey(name: 'accessToken')
-      @SafeStringConverter()
-      required this.accessToken,
-      @JsonKey(name: 'refreshToken')
-      @SafeStringConverter()
-      required this.refreshToken,
-      @JsonKey(name: 'id') @SafeStringConverter() required this.userId});
-  factory _AuthSessionModel.fromJson(Map<String, dynamic> json) =>
-      _$AuthSessionModelFromJson(json);
+  const _AuthSessionModel({@JsonKey(name: 'accessToken')@SafeStringConverter() required this.accessToken, @JsonKey(name: 'refreshToken')@SafeStringConverter() required this.refreshToken, @JsonKey(name: 'id')@SafeStringConverter() required this.userId});
+  factory _AuthSessionModel.fromJson(Map<String, dynamic> json) => _$AuthSessionModelFromJson(json);
 
-  @override
-  @JsonKey(name: 'accessToken')
-  @SafeStringConverter()
-  final String accessToken;
-  @override
-  @JsonKey(name: 'refreshToken')
-  @SafeStringConverter()
-  final String refreshToken;
-  @override
-  @JsonKey(name: 'id')
-  @SafeStringConverter()
-  final String userId;
+@override@JsonKey(name: 'accessToken')@SafeStringConverter() final  String accessToken;
+@override@JsonKey(name: 'refreshToken')@SafeStringConverter() final  String refreshToken;
+@override@JsonKey(name: 'id')@SafeStringConverter() final  String userId;
 
-  /// Create a copy of AuthSessionModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AuthSessionModelCopyWith<_AuthSessionModel> get copyWith =>
-      __$AuthSessionModelCopyWithImpl<_AuthSessionModel>(this, _$identity);
+/// Create a copy of AuthSessionModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AuthSessionModelCopyWith<_AuthSessionModel> get copyWith => __$AuthSessionModelCopyWithImpl<_AuthSessionModel>(this, _$identity);
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AuthSessionModelToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$AuthSessionModelToJson(this, );
+}
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _AuthSessionModel &&
-            (identical(other.accessToken, accessToken) ||
-                other.accessToken == accessToken) &&
-            (identical(other.refreshToken, refreshToken) ||
-                other.refreshToken == refreshToken) &&
-            (identical(other.userId, userId) || other.userId == userId));
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AuthSessionModel&&(identical(other.accessToken, accessToken) || other.accessToken == accessToken)&&(identical(other.refreshToken, refreshToken) || other.refreshToken == refreshToken)&&(identical(other.userId, userId) || other.userId == userId));
+}
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, accessToken, refreshToken, userId);
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,accessToken,refreshToken,userId);
 
-  @override
-  String toString() {
-    return 'AuthSessionModel(accessToken: $accessToken, refreshToken: $refreshToken, userId: $userId)';
-  }
+@override
+String toString() {
+  return 'AuthSessionModel(accessToken: $accessToken, refreshToken: $refreshToken, userId: $userId)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$AuthSessionModelCopyWith<$Res>
-    implements $AuthSessionModelCopyWith<$Res> {
-  factory _$AuthSessionModelCopyWith(
-          _AuthSessionModel value, $Res Function(_AuthSessionModel) _then) =
-      __$AuthSessionModelCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'accessToken') @SafeStringConverter() String accessToken,
-      @JsonKey(name: 'refreshToken') @SafeStringConverter() String refreshToken,
-      @JsonKey(name: 'id') @SafeStringConverter() String userId});
-}
+abstract mixin class _$AuthSessionModelCopyWith<$Res> implements $AuthSessionModelCopyWith<$Res> {
+  factory _$AuthSessionModelCopyWith(_AuthSessionModel value, $Res Function(_AuthSessionModel) _then) = __$AuthSessionModelCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'accessToken')@SafeStringConverter() String accessToken,@JsonKey(name: 'refreshToken')@SafeStringConverter() String refreshToken,@JsonKey(name: 'id')@SafeStringConverter() String userId
+});
 
+
+
+
+}
 /// @nodoc
 class __$AuthSessionModelCopyWithImpl<$Res>
     implements _$AuthSessionModelCopyWith<$Res> {
@@ -372,30 +266,18 @@ class __$AuthSessionModelCopyWithImpl<$Res>
   final _AuthSessionModel _self;
   final $Res Function(_AuthSessionModel) _then;
 
-  /// Create a copy of AuthSessionModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? accessToken = null,
-    Object? refreshToken = null,
-    Object? userId = null,
-  }) {
-    return _then(_AuthSessionModel(
-      accessToken: null == accessToken
-          ? _self.accessToken
-          : accessToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      refreshToken: null == refreshToken
-          ? _self.refreshToken
-          : refreshToken // ignore: cast_nullable_to_non_nullable
-              as String,
-      userId: null == userId
-          ? _self.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Create a copy of AuthSessionModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? accessToken = null,Object? refreshToken = null,Object? userId = null,}) {
+  return _then(_AuthSessionModel(
+accessToken: null == accessToken ? _self.accessToken : accessToken // ignore: cast_nullable_to_non_nullable
+as String,refreshToken: null == refreshToken ? _self.refreshToken : refreshToken // ignore: cast_nullable_to_non_nullable
+as String,userId: null == userId ? _self.userId : userId // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
 }
 
 // dart format on

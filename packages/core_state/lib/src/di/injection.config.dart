@@ -47,65 +47,85 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
 extension GetItInjectableX on _i174.GetIt {
-// initializes the registration of main-scope dependencies inside of GetIt
+  // initializes the registration of main-scope dependencies inside of GetIt
   _i174.GetIt init({
     String? environment,
     _i526.EnvironmentFilter? environmentFilter,
   }) {
-    final gh = _i526.GetItHelper(
-      this,
-      environment,
-      environmentFilter,
-    );
+    final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final registerModule = _$RegisterModule();
     gh.lazySingleton<_i48.ThemeRepository>(
-        () => registerModule.themeRepository(gh<_i856.ILocalStorage>()));
+      () => registerModule.themeRepository(gh<_i856.ILocalStorage>()),
+    );
     gh.lazySingleton<_i967.LocaleRepository>(
-        () => registerModule.localeRepository(gh<_i856.ILocalStorage>()));
+      () => registerModule.localeRepository(gh<_i856.ILocalStorage>()),
+    );
     gh.lazySingleton<_i309.AuthService>(
-        () => registerModule.authService(gh<_i309.DioClient>()));
-    gh.lazySingleton<_i714.SessionCubit>(() => _i714.SessionCubit(
-          gh<_i78.TokenStorage>(),
-          gh<_i474.SessionInvalidationHub>(),
-        ));
-    gh.lazySingleton<_i501.SessionController>(() => _i501.SessionController(
-          gh<_i78.TokenStorage>(),
-          gh<_i474.SessionInvalidationHub>(),
-        ));
-    gh.lazySingleton<_i309.UserService>(() => registerModule.userService(
-          gh<_i309.DioClient>(),
-          gh<_i309.DioClient>(instanceName: 'list'),
-        ));
+      () => registerModule.authService(gh<_i309.DioClient>()),
+    );
+    gh.lazySingleton<_i714.SessionCubit>(
+      () => _i714.SessionCubit(
+        gh<_i78.TokenStorage>(),
+        gh<_i474.SessionInvalidationHub>(),
+      ),
+    );
+    gh.lazySingleton<_i501.SessionController>(
+      () => _i501.SessionController(
+        gh<_i78.TokenStorage>(),
+        gh<_i474.SessionInvalidationHub>(),
+      ),
+    );
+    gh.lazySingleton<_i309.UserService>(
+      () => registerModule.userService(
+        gh<_i309.DioClient>(),
+        gh<_i309.DioClient>(instanceName: 'list'),
+      ),
+    );
     gh.lazySingleton<_i856.UserRepository>(
-        () => registerModule.userRepository(gh<_i309.UserService>()));
+      () => registerModule.userRepository(gh<_i309.UserService>()),
+    );
     gh.lazySingleton<_i438.LocaleCubit>(
-        () => _i438.LocaleCubit(gh<_i967.LocaleRepository>()));
+      () => _i438.LocaleCubit(gh<_i967.LocaleRepository>()),
+    );
     gh.lazySingleton<_i567.LocaleController>(
-        () => _i567.LocaleController(gh<_i967.LocaleRepository>()));
+      () => _i567.LocaleController(gh<_i967.LocaleRepository>()),
+    );
     gh.lazySingleton<_i935.ThemeCubit>(
-        () => _i935.ThemeCubit(gh<_i48.ThemeRepository>()));
+      () => _i935.ThemeCubit(gh<_i48.ThemeRepository>()),
+    );
     gh.lazySingleton<_i996.ThemeController>(
-        () => _i996.ThemeController(gh<_i48.ThemeRepository>()));
-    gh.lazySingleton<_i856.AuthRepository>(() => registerModule.authRepository(
-          gh<_i309.AuthService>(),
-          gh<_i78.TokenStorage>(),
-        ));
+      () => _i996.ThemeController(gh<_i48.ThemeRepository>()),
+    );
+    gh.lazySingleton<_i856.AuthRepository>(
+      () => registerModule.authRepository(
+        gh<_i309.AuthService>(),
+        gh<_i78.TokenStorage>(),
+      ),
+    );
     gh.factory<_i164.LoginBloc>(
-        () => _i164.LoginBloc(gh<_i856.AuthRepository>()));
+      () => _i164.LoginBloc(gh<_i856.AuthRepository>()),
+    );
     gh.factory<_i1050.RegisterBloc>(
-        () => _i1050.RegisterBloc(gh<_i856.AuthRepository>()));
+      () => _i1050.RegisterBloc(gh<_i856.AuthRepository>()),
+    );
     gh.factory<_i1008.LoginController>(
-        () => _i1008.LoginController(gh<_i856.AuthRepository>()));
+      () => _i1008.LoginController(gh<_i856.AuthRepository>()),
+    );
     gh.factory<_i84.RegisterController>(
-        () => _i84.RegisterController(gh<_i856.AuthRepository>()));
+      () => _i84.RegisterController(gh<_i856.AuthRepository>()),
+    );
     gh.factory<_i459.UserDetailBloc>(
-        () => _i459.UserDetailBloc(gh<_i856.UserRepository>()));
+      () => _i459.UserDetailBloc(gh<_i856.UserRepository>()),
+    );
     gh.factory<_i1029.UsersListBloc>(
-        () => _i1029.UsersListBloc(gh<_i856.UserRepository>()));
+      () => _i1029.UsersListBloc(gh<_i856.UserRepository>()),
+    );
     gh.factory<_i844.UserDetailController>(
-        () => _i844.UserDetailController(gh<_i856.UserRepository>()));
+      () => _i844.UserDetailController(gh<_i856.UserRepository>()),
+    );
     gh.factory<_i676.UsersListController>(
-        () => _i676.UsersListController(gh<_i856.UserRepository>()));
+      () => _i676.UsersListController(gh<_i856.UserRepository>()),
+    );
     return this;
   }
 }
